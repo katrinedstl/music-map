@@ -6,6 +6,6 @@ Select a color and a voice, and you are in the map. This is a map where you can 
 You can see the map in action at https://geolocmusic.herokuapp.com/
 
 # Run project
-Clone the project and run `npmi ` to install all the dependencies.
+Clone the project and run `npm i ` to install all the dependencies.
 
 Run `npm run dev` to start the dev server and open the browser at http://localhost:8000.
