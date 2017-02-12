@@ -1,0 +1,29 @@
+h1, h2, h3 {
+	font-family: 'Open Sans', sans-serif;
+	color: #141414;
+}
+
+h1 {
+	font-weight: 700;
+	color: #f9f9f9;
+
+	@media (min-width: 800px) {
+	    font-size: 4.25em;
+	}
+
+	@media (min-width: 1200px), (max-height: 1000px) {
+	    font-size: 2em;
+	}
+}
+
+h2 {
+  	font-weight: 700;
+
+  	@media (min-width: 800px) {
+  	    font-size: 3.25em;
+  	}
+
+  	@media (min-width: 1200px), (max-height: 1000px) {
+  	    font-size: 1.4em;
+  	}
+}

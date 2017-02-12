@@ -1,0 +1,128 @@
+@mixin circle($color) {
+    margin: 2% 2%;
+
+    cursor: pointer;
+
+    text-align: center;
+
+    position: relative;
+    width: 18%;
+    height: 0;
+    padding: 9% 0;
+    border-radius: 50%;
+
+    transition: all .2s ease-in-out;
+
+    background-color: $color;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+
+    &.active {
+        .checked {
+            position: relative;
+            width: 60%;
+            padding: 30% 0;
+            border-radius: 50%;
+            background: $color;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    span {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+
+        .inner-circle {
+            position: relative;
+            width: 60%;
+            padding: 30% 0;
+            border-radius: 50%;
+            background: #ffffff;
+            transform: translate(-50%, -50%);
+
+            span {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+            }
+        }
+    }
+}
+
+.picker {
+    width: 100%;
+
+    padding-top: 10%;
+
+    h2 {
+        width: 90%;
+        padding-left: 5%;
+
+        margin: 0 auto;
+    }
+    
+    .colors, .sounds {
+        width: 90%;
+        height: 50%;
+
+        padding-top: 25px;
+
+        @include display(flex);
+        
+        @include flex-direction(row);
+        @include flex-wrap(wrap);
+        @include justify-content(space-between);
+
+        margin: 0 auto;
+    }
+
+    .color {
+        &.red { @include circle(#ec6964) };   
+        &.pink { @include circle(#ec649f) };
+        &.purple { @include circle(#bd61a8) };
+        &.deep-purple { @include circle(#765ca9) };
+        &.blue { @include circle(#3c83d0) };
+        &.sea-blue { @include circle(#00b4be) };
+        &.sea-green { @include circle(#00be88) };
+        &.green { @include circle(#88c265) };
+        &.yellow { @include circle(#ffee67) };
+        &.orange { @include circle(#f4a97a) };
+        &.brown { @include circle(#9e7c42) };
+        &.gray { @include circle(#c4c7c1) };
+    }
+
+    .sound {
+        @include circle(#b4b4b4);
+        
+        .note-symbol {
+            &:after {
+                content: '♪';
+                display: inline-block;
+                font-weight: 700;
+                color: #b4b4b4;
+                transform: translate(-100%, -50%);
+
+                @media (min-width: 800px) {
+                    font-size: 4.25em;
+                }
+
+                @media (min-width: 1200px), (max-height: 1000px) {
+                    font-size: 1.75em;
+                }
+            }
+        }
+
+        &.selected {
+            background-color: #95e645;
+
+            .note-symbol {
+                &:after {
+                    color: #95e645;
+                }
+            }
+        }
+    }
+}
